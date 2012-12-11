@@ -7,5 +7,7 @@
     <string name="notes_hint">Notes</string>
     <string name="add_title">Add</string>
     <string name="due_tag">"Due Date: "</string>
+    <string name="complete_toggle_on">Done!</string>
+    <string name="complete_toggle_off">Incomplete</string>
 
 </resources>
