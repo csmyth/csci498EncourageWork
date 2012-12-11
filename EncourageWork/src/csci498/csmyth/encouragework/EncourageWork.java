@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -35,6 +36,9 @@ public class EncourageWork extends Activity {
 			asmnt.setName(((EditText)findViewById(R.id.name)).getText().toString());
 			DatePicker date_picker = (DatePicker)findViewById(R.id.date_picker);
 			asmnt.setDue_date(new Date(date_picker.getYear(), date_picker.getMonth(), date_picker.getDayOfMonth()));
+			asmnt.setNotes(((EditText)findViewById(R.id.notes)).getText().toString());
+			CheckBox complete = (CheckBox)findViewById(R.id.complete);
+			asmnt.setComplete(complete.isChecked());
 		}
 	};
     
