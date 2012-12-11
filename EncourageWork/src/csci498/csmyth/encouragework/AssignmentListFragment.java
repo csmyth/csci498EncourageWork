@@ -1,6 +1,7 @@
 package csci498.csmyth.encouragework;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
@@ -19,12 +20,17 @@ import csci498.csmyth.encouragework.dummy.DummyContent;
  * interface.
  */
 public class AssignmentListFragment extends ListFragment {
-
+	public static final String ID_EXTRA = "csci498.csmyth.encouragework._ID";
+	
     /**
      * The serialization (saved instance state) Bundle key representing the
      * activated item position. Only used on tablets.
      */
     private static final String STATE_ACTIVATED_POSITION = "activated_position";
+    
+    Cursor model = null;
+    AssignmentHelper helper = null;
+    AssignmentAdapter adapter = null;
 
     /**
      * The fragment's current callback object, which is notified of list item
