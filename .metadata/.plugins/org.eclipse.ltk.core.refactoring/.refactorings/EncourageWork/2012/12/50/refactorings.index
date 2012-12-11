@@ -1,2 +1,6 @@
 1355196818141	Extracts string 'null' into R.string.asgn_name_tag
 1355197090311	Extracts string 'null' into R.string.asmnt_name_field
+1355200638442	Extracts string 'null' into R.string.asmnt_name_field
+1355200795633	Extracts string 'null' into R.string.due_date_tag
+1355201680209	Extracts string 'null' into R.string.check_complete
+1355201754876	Extracts string 'null' into R.string.notes_hint
