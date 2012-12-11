@@ -39,5 +39,11 @@ public class Assignment {
 	public void setDue_date(Date due_date) {
 		this.due_date = due_date;
 	}
-		
+
+	@Override
+	public String toString() {
+		return getName();
+	}
+	
+	
 }
