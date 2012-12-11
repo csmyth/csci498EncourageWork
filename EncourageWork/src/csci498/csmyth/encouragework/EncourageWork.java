@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 
 public class EncourageWork extends Activity {
+	Assignment asmnt = new Assignment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
