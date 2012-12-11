@@ -1,16 +1,14 @@
 package csci498.csmyth.encouragework;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import csci498.csmyth.encouragework.dummy.DummyContent;
+import android.widget.ToggleButton;
 
 /**
  * A fragment representing a single Assignment detail screen.
@@ -20,17 +18,18 @@ import csci498.csmyth.encouragework.dummy.DummyContent;
  */
 public class AssignmentDetailFragment extends Fragment {
 	EditText name = null;
-	DatePicker date = null;
+	DatePicker date_picker = null;
 	EditText notes = null;
-	CheckBox complete = null;
+	ToggleButton complete = null;
 	
 	AssignmentHelper helper = null;
+	String assignmentId = null;
 	
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
      */
-    public static final String ARG_ITEM_ID = "item_id";
+    //public static final String ARG_ITEM_ID = "item_id";
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -70,7 +69,47 @@ public class AssignmentDetailFragment extends Fragment {
     	super.onActivityCreated(savedInstanceState);
     	
     	name = (EditText)getView().findViewById(R.id.name);
-    	// stopped here
+    	date_picker = (DatePicker)getView().findViewById(R.id.date_picker);
+    	notes = (EditText)getView().findViewById(R.id.notes);
+    	complete = (ToggleButton)getView().findViewById(R.id.complete);
+    }
+
+    @Override
+    public void onPause() {
+    	save();
+    	helper.close();
+    	super.onPause();
     }
     
+    @Override
+    public void onResume() {
+    	super.onResume();
+    	helper = new AssignmentHelper(getActivity());
+    	assignmentId = getActivity().getIntent().getStringExtra(EncourageWork.ID_EXTRA);
+    	
+    	if (assignmentId != null) load();
+    }
+    
+    private void load() {
+    	Cursor c = helper.getById(assignmentId);
+    	c.moveToFirst();
+    	
+    	name.setText(helper.getName(c));
+    	date_picker.updateDate(helper.getYear(c), helper.getMonth(c), helper.getDayOfMonth(c));
+    	notes.setText(helper.getNotes(c));
+    	complete.setChecked(helper.getComplete(c));
+    	
+    	c.close();
+    }
+    
+    private void save() {
+    	if (name.getText().toString().length() > 0) {
+    		int checked;
+    		if (complete.isChecked()) checked = 1;
+    		else checked = 0;
+    		
+    		if (assignmentId == null) helper.insert(name.getText().toString(), date_picker.getYear(), date_picker.getMonth(), date_picker.getDayOfMonth(), notes.getText().toString(), checked);
+    		else helper.update(assignmentId, name.getText().toString(), date_picker.getYear(), date_picker.getMonth(), date_picker.getDayOfMonth(), notes.getText().toString(), checked);
+    	}
+    }
 }
