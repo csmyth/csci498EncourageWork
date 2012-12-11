@@ -21,10 +21,9 @@ import android.support.v4.app.FragmentActivity;
  * {@link AssignmentListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class AssignmentListActivity extends FragmentActivity
-        implements AssignmentListFragment.Callbacks {
-
-    /**
+public class AssignmentListActivity extends FragmentActivity implements AssignmentListFragment.OnAssignmentListener {
+    public final static String ID_EXTRA = "csci498.csmyth.encouragework._ID";
+	/**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
@@ -47,9 +46,10 @@ public class AssignmentListActivity extends FragmentActivity
             ((AssignmentListFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.assignment_list))
                     .setActivateOnItemClick(true);
+        } else {
+        	AssignmentListFragment ewfrag = (AssignmentListFragment)getSupportFragmentManager().findFragmentById(R.id.assignment_list);
+        	ewfrag.setOnAssignmentListener(this);
         }
-
-        // TODO: If exposing deep links into your app, handle intents here.
     }
 
     /**
@@ -57,13 +57,13 @@ public class AssignmentListActivity extends FragmentActivity
      * indicating that the item with the given ID was selected.
      */
     @Override
-    public void onItemSelected(String id) {
+    public void onAssignmentSelected(long id) {
         if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(AssignmentDetailFragment.ARG_ITEM_ID, id);
+            arguments.putString(ID_EXTRA, String.valueOf(id));
             AssignmentDetailFragment fragment = new AssignmentDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
@@ -74,7 +74,7 @@ public class AssignmentListActivity extends FragmentActivity
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
             Intent detailIntent = new Intent(this, AssignmentDetailActivity.class);
-            detailIntent.putExtra(AssignmentDetailFragment.ARG_ITEM_ID, id);
+            detailIntent.putExtra(ID_EXTRA, String.valueOf(id));
             startActivity(detailIntent);
         }
     }
