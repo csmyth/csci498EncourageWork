@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -233,14 +234,17 @@ public class AssignmentListFragment extends ListFragment {
     
     static class AssignmentHolder {
     	private TextView name = null;
+    	private CheckBox complete = null;
     	// TODO: add other row elements here
     	
     	AssignmentHolder(View row) {
     		name = (TextView)row.findViewById(R.id.title);
+    		complete = (CheckBox)row.findViewById(R.id.check_complete);
     	}
     	
     	void populateFrom(Cursor c, AssignmentHelper helper) {
     		name.setText(helper.getName(c));
+    		complete.setChecked(helper.getComplete(c));
     	}
     }
     
