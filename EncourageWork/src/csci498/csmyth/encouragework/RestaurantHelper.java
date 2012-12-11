@@ -14,11 +14,11 @@ public class RestaurantHelper extends SQLiteOpenHelper {
 	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		
+		db.execSQL("CREATE TABLE assignments (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, due_date DATE, notes TEXT, complete BOOLEAN);");
 	}
 	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		
+		// no-op, since will note be called until 2nd schema version exists
 	}
 }
