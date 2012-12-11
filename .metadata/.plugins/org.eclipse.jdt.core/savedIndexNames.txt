@@ -1,4 +1,3 @@
 INDEX VERSION 1.126+C:\Users\cecilia\git\csci498EncourageWork\.metadata\.plugins\org.eclipse.jdt.core
-3150289222.index
 3733832246.index
 402070739.index
