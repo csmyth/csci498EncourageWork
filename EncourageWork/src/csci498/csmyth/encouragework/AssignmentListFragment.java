@@ -60,8 +60,10 @@ public class AssignmentListFragment extends ListFragment {
     }
     
     @Override
-    public void onListItemClick(ListView listView, View view, int position, long id) {
-    	if (listener != null) listener.onAssignmentSelected(id);
+    public void onListItemClick(ListView list, View view, int position, long id) {
+    	if (listener != null) {
+    		listener.onAssignmentSelected(id);
+    	}
     }
     
     public void setOnAssignmentListener(OnAssignmentListener listener) {
@@ -69,7 +71,9 @@ public class AssignmentListFragment extends ListFragment {
     }
     
     private void initList() {
-    	if (model != null) model.close();
+    	if (model != null) {
+    		model.close();
+    	}
     	model = helper.getAll("name");
     	adapter = new AssignmentAdapter(model);
     	setListAdapter(adapter);

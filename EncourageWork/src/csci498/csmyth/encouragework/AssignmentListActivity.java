@@ -8,7 +8,7 @@ public class AssignmentListActivity extends FragmentActivity implements Assignme
     public final static String ID_EXTRA = "csci498.csmyth.encouragework._ID";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assignment_list);
         AssignmentListFragment ewfrag = (AssignmentListFragment)getSupportFragmentManager().findFragmentById(R.id.assignment_list);
