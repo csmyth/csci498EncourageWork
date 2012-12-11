@@ -15,6 +15,7 @@ import android.widget.EditText;
 
 public class EncourageWork extends Activity {
 	List<Assignment> assignments = new ArrayList<Assignment>();
+	RestaurantHelper helper = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +24,14 @@ public class EncourageWork extends Activity {
         
         Button save = (Button)findViewById(R.id.save);
         save.setOnClickListener(onSave);
+        
+        helper = new RestaurantHelper(this);
     }
-
+    
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_encourage_work, menu);
-        return true;
+    public void onDestroy() {
+    	super.onDestroy();
+    	helper.close();
     }
     
     private View.OnClickListener onSave = new View.OnClickListener() {
