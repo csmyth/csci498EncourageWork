@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import csci498.csmyth.encouragework.dummy.DummyContent;
@@ -16,6 +19,13 @@ import csci498.csmyth.encouragework.dummy.DummyContent;
  * on handsets.
  */
 public class AssignmentDetailFragment extends Fragment {
+	EditText name = null;
+	DatePicker date = null;
+	EditText notes = null;
+	CheckBox complete = null;
+	
+	AssignmentHelper helper = null;
+	
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
