@@ -1,6 +1,8 @@
 package csci498.csmyth.encouragework;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,7 +14,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 public class EncourageWork extends Activity {
-	Assignment asmnt = new Assignment();
+	List<Assignment> assignments = new ArrayList<Assignment>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class EncourageWork extends Activity {
     private View.OnClickListener onSave = new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
+			Assignment asmnt = new Assignment();
+			
 			asmnt.setName(((EditText)findViewById(R.id.name)).getText().toString());
 			DatePicker date_picker = (DatePicker)findViewById(R.id.date_picker);
 			asmnt.setDue_date(new Date(date_picker.getYear(), date_picker.getMonth(), date_picker.getDayOfMonth()));
