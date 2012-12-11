@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EncourageWork</string>
+    <string name="title_assignment_detail">Assignment Detail</string>
+    <string name="assignment_name_field">Assignment Name</string>
+    <string name="notes_tag">Notes:</string>
+
+</resources>
