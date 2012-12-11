@@ -17,8 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import csci498.csmyth.encouragework.dummy.DummyContent;
-
 /**
  * A list fragment representing a list of Assignments. This fragment
  * also supports tablet devices by allowing list items to be given an
