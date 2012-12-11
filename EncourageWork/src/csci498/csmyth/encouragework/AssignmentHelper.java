@@ -96,4 +96,8 @@ public class AssignmentHelper extends SQLiteOpenHelper {
 		if (temp == 1) return true;
 		else return false;
 	}
+	
+	public String getDate(Cursor c) {
+		return getMonth(c) + "/" + getDayOfMonth(c) + "/" + getYear(c); 
+	}
 }

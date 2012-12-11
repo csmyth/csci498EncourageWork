@@ -108,15 +108,18 @@ public class AssignmentListFragment extends ListFragment {
     static class AssignmentHolder {
     	private TextView name = null;
     	private CheckBox complete = null;
+    	private TextView due_date = null;
     	
     	AssignmentHolder(View row) {
     		name = (TextView)row.findViewById(R.id.title);
     		complete = (CheckBox)row.findViewById(R.id.check_complete);
+    		due_date = (TextView)row.findViewById(R.id.due_date_row);
     	}
     	
     	void populateFrom(Cursor c, AssignmentHelper helper) {
     		name.setText(helper.getName(c));
     		complete.setChecked(helper.getComplete(c));
+    		due_date.setText(helper.getDate(c));
     	}
     }
     
