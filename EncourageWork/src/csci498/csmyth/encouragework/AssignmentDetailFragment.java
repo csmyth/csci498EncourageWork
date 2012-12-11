@@ -85,7 +85,7 @@ public class AssignmentDetailFragment extends Fragment {
     public void onResume() {
     	super.onResume();
     	helper = new AssignmentHelper(getActivity());
-    	assignmentId = getActivity().getIntent().getStringExtra(EncourageWork.ID_EXTRA);
+    	assignmentId = getActivity().getIntent().getStringExtra(AssignmentListActivity.ID_EXTRA);
     	
     	if (assignmentId != null) load();
     }
