@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
+    <supports-screens android:normalScreens="true" android:largeScreens="true" android:smallScreens="false"/>
 
     <application
         android:allowBackup="true"
