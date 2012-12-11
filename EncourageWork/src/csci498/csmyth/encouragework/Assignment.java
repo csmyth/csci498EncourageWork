@@ -1,5 +1,7 @@
 package csci498.csmyth.encouragework;
 
+import java.util.Date;
+
 public class Assignment {
 	private String name = "";
 	private String notes = "";
@@ -46,6 +48,16 @@ public class Assignment {
 	
 	public void setDay_of_month(Integer day_of_month) {
 		this.day_of_month = day_of_month;
+	}
+	
+	public Date getDate() {
+		return new Date(year, month, day_of_month);
+	}
+	
+	public void setDate(Date date) {
+		this.year = date.getYear();
+		this.month = date.getMonth();
+		this.day_of_month = date.getDate();
 	}
 	
 	public Boolean getComplete() {
