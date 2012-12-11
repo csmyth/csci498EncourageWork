@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">EncourageWork</string>
-    <string name="title_assignment_detail">Assignment Detail</string>
-    <string name="asmnt_name_field">Assignment Name</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
 
 </resources>

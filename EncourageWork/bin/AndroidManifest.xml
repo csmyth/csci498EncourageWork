@@ -5,9 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="8"
         android:targetSdkVersion="16" />
-    <supports-screens android:smallScreens="false" android:normalScreens="true" android:largeScreens="true"/>
 
     <application
         android:allowBackup="true"
@@ -15,21 +14,13 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="csci498.csmyth.encouragework.AssignmentListActivity"
+            android:name="csci498.csmyth.encouragework.EncourageWork"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="csci498.csmyth.encouragework.AssignmentDetailActivity"
-            android:label="@string/title_assignment_detail"
-            android:parentActivityName=".AssignmentListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AssignmentListActivity" />
         </activity>
     </application>
 
