@@ -8,3 +8,15 @@ Command-line arguments:  -data C:\Users\cecilia\git\csci498EncourageWork -os win
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2012-12-10 20:06:20.647
 !MESSAGE Failed to load properties file for project 'EncourageWork'
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-12-10 20:37:33.450
+!MESSAGE activity_assignment_detail.xml: Couldn't resolve resource @string/asgn_name_tag
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-12-10 20:37:33.451
+!MESSAGE activity_assignment_detail.xml: Couldn't resolve resource @string/asgn_name_tag
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-12-10 20:37:40.042
+!MESSAGE activity_assignment_detail.xml: Couldn't resolve resource @string/asgn_name_tag
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2012-12-10 20:38:11.895
+!MESSAGE activity_assignment_detail.xml: Couldn't resolve resource @string/asgn_name_tag
