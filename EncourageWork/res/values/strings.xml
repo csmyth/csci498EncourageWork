@@ -6,5 +6,6 @@
     <string name="assignment_name_field">Assignment Name</string>
     <string name="notes_hint">Notes</string>
     <string name="add_title">Add</string>
+    <string name="due_tag">"Due Date: "</string>
 
 </resources>
